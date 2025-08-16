@@ -141,10 +141,13 @@
     border-radius: 16px;
     padding: 20px;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    /* Убираем ограничения ширины */
+    max-width: none !important;
+    width: 100%;
 }
 
 .todo-item::before {
@@ -165,7 +168,8 @@
 .todo-item:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(0, 206, 209, 0.3);
+    border-color: rgba(0, 206, 209, 0.4);
+    border-width: 3px;
 }
 
 .todo-image {
@@ -177,6 +181,21 @@
 .todo-item:hover .todo-image {
     filter: brightness(1.1);
     transform: scale(1.05);
+}
+
+/* Улучшаем сетку карточек */
+.second-section .todo {
+    gap: 15px !important;
+    margin-top: 30px;
+}
+
+/* Убираем ограничения ширины для всех карточек */
+.second-section .todo-item:nth-child(1),
+.second-section .todo-item:nth-child(2),
+.second-section .todo-item:nth-child(3),
+.second-section .todo-item:nth-child(4) {
+    max-width: none !important;
+    width: 100%;
 }
 
 /* Улучшенная секция с игроками */
@@ -198,35 +217,11 @@
 }
 
 .player-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.player-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #00CED1, #40E0D0, #00BFFF);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.player-card:hover::before {
-    transform: scaleX(1);
-}
-
-.player-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    border-color: rgba(0, 206, 209, 0.3);
 }
 
 /* Улучшенные карточки в четвертой секции */
@@ -427,6 +422,21 @@
 @media (max-width: 768px) {
     .todo-item {
         margin-bottom: 20px;
+        border-width: 2px;
+        padding: 15px;
+        width: 100%;
+        max-width: none !important;
+    }
+    
+    .todo-item:hover {
+        transform: translateY(-4px);
+        border-width: 3px;
+    }
+    
+    /* Улучшаем сетку на планшетах */
+    .second-section .todo {
+        gap: 12px !important;
+        grid-template-columns: repeat(2, 1fr) !important;
     }
     
     .title-section::after {
@@ -440,4 +450,312 @@
         bottom: 20px;
         right: 20px;
     }
-} 
+    
+    /* Адаптивные стили для карточек */
+    .four-section .card {
+        border-width: 2px;
+        padding: 20px;
+    }
+    
+    .four-section .card:hover {
+        transform: translateY(-4px);
+        border-width: 3px;
+    }
+    
+    .six-section .item-card-link {
+        border-width: 2px;
+        padding: 15px;
+    }
+    
+    .six-section .item-card-link:hover {
+        transform: translateY(-4px);
+        border-width: 3px;
+    }
+    
+    .player-card {
+        padding: 10px;
+        border-width: 1.5px;
+        /* Убираем эффекты наведения */
+        transition: none;
+    }
+    
+    .player-card:hover {
+        transform: none;
+        border-width: 1.5px;
+        box-shadow: none;
+    }
+    
+    /* Адаптивные стили для спойлеров */
+    .five-section .spoller-item {
+        border-width: 2px;
+        padding: 15px;
+    }
+    
+    .five-section .spoller-item:hover,
+    .five-section .spoller-item.active {
+        border-width: 3px;
+    }
+    
+    /* Адаптивные стили для навигации */
+    nav a::before {
+        height: 3px;
+        bottom: -3px;
+    }
+    
+    nav button:hover {
+        transform: translateY(-1px);
+    }
+    
+    /* Адаптивные стили для изображений */
+    .todo-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .image-wraper {
+        border-radius: 8px;
+    }
+    
+    /* Адаптивные стили для типографики */
+    .title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .title-section {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .todo-item-title {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+    
+    .todo-item-desc {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    /* Адаптивные стили для кнопки "Играть" */
+    .style-btn {
+        padding: 10px 18px;
+        font-size: 1rem;
+    }
+    
+    .style-btn:hover {
+        transform: translateY(-1px);
+    }
+    
+    /* Адаптивные стили для иконок */
+    .title-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Адаптивные стили для ссылок */
+    .card-link::after {
+        right: -15px;
+    }
+    
+    .card-link:hover::after {
+        right: -18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .todo-item {
+        padding: 12px;
+        border-width: 1.5px;
+        width: 100%;
+        max-width: none !important;
+    }
+    
+    .todo-item:hover {
+        transform: translateY(-2px);
+        border-width: 2px;
+    }
+    
+    /* Одна колонка на мобильных */
+    .second-section .todo {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .title-section {
+        font-size: 1.5rem;
+    }
+    
+    .todo-item-title {
+        font-size: 1.1rem;
+    }
+    
+    .todo-item-desc {
+        font-size: 0.9rem;
+    }
+    
+    .style-btn {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
+    
+    .four-section .card {
+        padding: 15px;
+        border-width: 1.5px;
+    }
+    
+    .four-section .card:hover {
+        transform: translateY(-2px);
+        border-width: 2px;
+    }
+    
+    .six-section .item-card-link {
+        padding: 12px;
+        border-width: 1.5px;
+    }
+    
+    .six-section .item-card-link:hover {
+        transform: translateY(-2px);
+        border-width: 2px;
+    }
+    
+    .player-card {
+        padding: 10px;
+        border-width: 1.5px;
+    }
+    
+    .player-card:hover {
+        transform: translateY(-2px) scale(1.005);
+        border-width: 2px;
+    }
+    
+    .five-section .spoller-item {
+        padding: 12px;
+        border-width: 1.5px;
+    }
+    
+    .five-section .spoller-item:hover,
+    .five-section .spoller-item.active {
+        border-width: 2px;
+    }
+    
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .title-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Дополнительные улучшения для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .todo-item {
+        padding: 18px;
+        border-width: 2px;
+        width: 100%;
+        max-width: none !important;
+    }
+    
+    .todo-item:hover {
+        transform: translateY(-6px);
+        border-width: 3px;
+    }
+    
+    /* Две колонки на планшетах */
+    .second-section .todo {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .title {
+        font-size: 2.8rem;
+    }
+    
+    .title-section {
+        font-size: 2rem;
+    }
+    
+    .four-section .card {
+        padding: 25px;
+        border-width: 2px;
+    }
+    
+    .four-section .card:hover {
+        transform: translateY(-6px);
+        border-width: 3px;
+    }
+    
+    .six-section .item-card-link {
+        padding: 20px;
+        border-width: 2px;
+    }
+    
+    .six-section .item-card-link:hover {
+        transform: translateY(-6px);
+        border-width: 3px;
+    }
+    
+    .player-card {
+        padding: 15px;
+        border-width: 2px;
+        /* Убираем эффекты наведения */
+        transition: none;
+    }
+    
+    .player-card:hover {
+        transform: none;
+        border-width: 2px;
+        box-shadow: none;
+    }
+}
+
+/* Улучшения для больших экранов */
+@media (min-width: 1025px) {
+    .todo-item {
+        padding: 25px;
+        border-width: 2px;
+        width: 100%;
+        max-width: none !important;
+    }
+    
+    .todo-item:hover {
+        transform: translateY(-10px);
+        border-width: 3px;
+    }
+    
+    /* Четыре колонки на больших экранах */
+    .second-section .todo {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .four-section .card {
+        padding: 30px;
+        border-width: 2px;
+    }
+    
+    .four-section .card:hover {
+        transform: translateY(-10px);
+        border-width: 3px;
+    }
+    
+    .six-section .item-card-link {
+        padding: 25px;
+        border-width: 2px;
+    }
+    
+    .six-section .item-card-link:hover {
+        transform: translateY(-10px);
+        border-width: 3px;
+    }
+
+}
