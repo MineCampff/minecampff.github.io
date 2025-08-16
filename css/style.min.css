@@ -726,20 +726,10 @@
     .three-section .players-row { 
         padding: 0 1em;
         gap: 1em;
-        /* Оптимизация анимации для мобильных */
-        animation-duration: 15s;
-        will-change: transform;
-        transform: translateZ(0);
     }
-    .three-section .row-1 { animation-duration: 15s; }
-    .three-section .row-2 { animation-duration: 20s; }
-    .three-section .row-3 { animation-duration: 25s; }
     .three-section .player-card { 
         min-width: 160px; 
         padding: 1.2em;
-        /* Оптимизация рендеринга */
-        transform: translateZ(0);
-        backface-visibility: hidden;
     }
     .three-section .player-name { font-size: 1em; }
     .three-section .player-status { font-size: 0.8em; }
