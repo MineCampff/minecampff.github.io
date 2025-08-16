@@ -736,6 +736,7 @@
     .four-section .container { padding: 0; }
     .four-section .card-list {
         grid-template-columns: repeat(1, 1fr);
+        gap: 1em;
     }
     .four-section .card-list .card {
         border: none;
