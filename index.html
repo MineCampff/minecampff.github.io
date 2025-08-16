@@ -96,7 +96,7 @@
         <div class="wraper">
           <h2 class="title-section">Чем можно заняться?</h2>
           <ul class="todo">
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1000">
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1500">
               <img src="images/1.png" alt="" class="todo-image">
               <div class="todo-info">
                 <h1 class="todo-item-title">Выживайте</h1>
@@ -104,7 +104,7 @@
                   другими игроками</p>
               </div>
             </li>
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1100">
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1500">
               <img src="images/2.png" alt="" class="todo-image">
               <div class="todo-info">
                 <h1 class="todo-item-title">Вступайте в города</h1>
@@ -112,15 +112,15 @@
                   и фермы, где люди находят новых друзей</p>
               </div>
             </li>
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1200">
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1500">
               <img src="images/3.png" alt="" class="todo-image">
               <div class="todo-info">
                 <h1 class="todo-item-title">Торгуйте</h1>
-                <p class="todo-item-desc">Работайте, добывайте ресурсы, откройте бизнес и продавайте
+                <p class="todo-item-desc">�&nbsp;аботайте, добывайте ресурсы, откройте бизнес и продавайте
                   вещи на рынке</p>
               </div>
             </li>
-            <li class="todo-item" data-aos="fade-up" data-aos-duration="1300">
+            <li class="todo-item" data-aos="fade-up" data-aos-duration="1500">
               <img src="images/4.png" alt="" class="todo-image">
               <div class="todo-info">
                 <h1 class="todo-item-title">Участвуйте в ивентах</h1>
@@ -523,6 +523,13 @@
   <footer>
   </footer>
   
+  <!-- Кнопка "Наверх" -->
+  <button class="scroll-to-top" onclick="scrollToTop()">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 4L4 12H9V20H15V12H20L12 4Z" fill="currentColor"/>
+    </svg>
+  </button>
+  
   <script src="js/jquery.min.js"></script>
   <!-- <script src="js/app.min.js"></script> -->
   <script src="js/warning-profil.js"></script>
@@ -531,6 +538,26 @@
   <script src="js/aos.min.js"></script>
   <script>
     AOS.init();
+  </script>
+
+  <script>
+    // Функция для прокрутки наверх
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Показывать/скрывать кнопку "Наверх"
+    window.addEventListener('scroll', function() {
+      const scrollToTopBtn = document.querySelector('.scroll-to-top');
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
   </script>
 
 <script src="js/flowbite.min.js"></script>

@@ -60,7 +60,7 @@
     background: linear-gradient(135deg, #00BFFF 0%, #00CED1 50%, #40E0D0 100%);
     background-size: 200% 200%;
     box-shadow: 0 4px 20px rgba(0, 206, 209, 0.4), 0 8px 30px rgba(64, 224, 208, 0.3);
-    transform: translateY(-2px);
+    transform: scale(1.05);
     animation: gradientShift 1.5s ease infinite;
 }
 
@@ -178,22 +178,13 @@
 
 .todo-item:hover .todo-image {
     filter: brightness(1.1);
-    transform: scale(1.05);
+    transform: translateY(1.05);
 }
 
 /* Улучшаем сетку карточек */
 .second-section .todo {
     gap: 15px !important;
     margin-top: 30px;
-}
-
-/* Убираем ограничения ширины для всех карточек */
-.second-section .todo-item:nth-child(1),
-.second-section .todo-item:nth-child(2),
-.second-section .todo-item:nth-child(3),
-.second-section .todo-item:nth-child(4) {
-    max-width: none !important;
-    width: 100%;
 }
 
 /* Улучшенная секция с игроками */
@@ -339,36 +330,6 @@
     transform: scale(1.05);
 }
 
-/* Улучшенная кнопка "Наверх" */
-.scroll-to-top {
-    background: linear-gradient(135deg, #00CED1 0%, #40E0D0 50%, #00BFFF 100%);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 206, 209, 0.3);
-    z-index: 1000;
-}
-
-.scroll-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.scroll-to-top:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(0, 206, 209, 0.5);
-}
-
 /* Улучшенный фон для первой секции */
 .first-section {
     position: relative;
@@ -440,13 +401,6 @@
     .title-section::after {
         width: 40px;
         height: 2px;
-    }
-    
-    .scroll-to-top {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        right: 20px;
     }
     
     /* Адаптивные стили для карточек */
@@ -641,13 +595,6 @@
         border-width: 2px;
     }
     
-    .scroll-to-top {
-        width: 40px;
-        height: 40px;
-        bottom: 15px;
-        right: 15px;
-    }
-    
     .title-icon {
         width: 30px;
         height: 30px;
@@ -752,8 +699,7 @@
     }
     
     .six-section .item-card-link:hover {
-        transform: translateY(-10px);
-        border-width: 3px;
+        transform: scale(1.01);
     }
 
 }
