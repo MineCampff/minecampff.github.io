@@ -1,0 +1,443 @@
+/* Стили для закругления краев логотипа */
+.logo-image {
+    border-radius: 12px;
+    transition: border-radius 0.3s ease;
+}
+
+.logo-image:hover {
+    border-radius: 16px;
+}
+
+/* Альтернативный вариант с более мягким закруглением */
+.logo-rounded {
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo-rounded:hover {
+    border-radius: 12px;
+    transform: scale(1.02);
+}
+
+/* Вариант с очень мягким закруглением */
+.logo-soft {
+    border-radius: 6px;
+    transition: border-radius 0.3s ease;
+}
+
+.logo-soft:hover {
+    border-radius: 10px;
+}
+
+/* Вариант с сильным закруглением */
+.logo-strong {
+    border-radius: 20px;
+    transition: border-radius 0.3s ease;
+}
+
+.logo-strong:hover {
+    border-radius: 25px;
+}
+
+/* Стили для кнопки "Играть" с бирюзово-голубым градиентом */
+.style-btn {
+    background: linear-gradient(135deg, #00CED1 0%, #40E0D0 50%, #00BFFF 100%);
+    background-size: 200% 200%;
+    border: none;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: gradientShift 3s ease infinite;
+}
+
+.style-btn:hover {
+    background: linear-gradient(135deg, #00BFFF 0%, #00CED1 50%, #40E0D0 100%);
+    background-size: 200% 200%;
+    box-shadow: 0 4px 20px rgba(0, 206, 209, 0.4), 0 8px 30px rgba(64, 224, 208, 0.3);
+    transform: translateY(-2px);
+    animation: gradientShift 1.5s ease infinite;
+}
+
+.style-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 206, 209, 0.3);
+}
+
+/* Анимация градиента */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Альтернативный вариант градиента */
+.style-btn-alt {
+    background: linear-gradient(45deg, #20B2AA 0%, #48D1CC 25%, #00CED1 50%, #40E0D0 75%, #00BFFF 100%);
+    border: none;
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.style-btn-alt:hover {
+    background: linear-gradient(45deg, #00BFFF 0%, #20B2AA 25%, #48D1CC 50%, #00CED1 75%, #40E0D0 100%);
+    box-shadow: 0 6px 25px rgba(32, 178, 170, 0.5), 0 12px 40px rgba(72, 209, 204, 0.4);
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   УЛУЧШЕНИЯ ДИЗАЙНА САЙТА
+=========================== */
+
+/* Улучшенная типографика */
+.title {
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+}
+
+.title-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.title-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00CED1, #40E0D0, #00BFFF);
+    border-radius: 2px;
+}
+
+/* Улучшенные карточки */
+.todo-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.todo-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.todo-item:hover::before {
+    left: 100%;
+}
+
+.todo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 206, 209, 0.3);
+}
+
+.todo-image {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.todo-item:hover .todo-image {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* Улучшенная секция с игроками */
+.three-section {
+    background: linear-gradient(135deg, #282936 0%, #1a1b23 100%);
+    position: relative;
+}
+
+.three-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(0, 206, 209, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(64, 224, 208, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.player-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.player-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00CED1, #40E0D0, #00BFFF);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.player-card:hover::before {
+    transform: scaleX(1);
+}
+
+.player-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 206, 209, 0.3);
+}
+
+/* Улучшенные карточки в четвертой секции */
+.four-section .card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.four-section .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 206, 209, 0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.four-section .card:hover::before {
+    opacity: 1;
+}
+
+.four-section .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 206, 209, 0.3);
+}
+
+/* Улучшенные спойлеры */
+.five-section .spoller-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.five-section .spoller-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #00CED1, #40E0D0);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.five-section .spoller-item:hover::before,
+.five-section .spoller-item.active::before {
+    transform: scaleY(1);
+}
+
+.five-section .spoller-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.five-section .spoller-item.active {
+    background: rgba(0, 206, 209, 0.1);
+    border-color: rgba(0, 206, 209, 0.3);
+}
+
+/* Улучшенные карточки ссылок */
+.six-section .item-card {
+    transition: all 0.3s ease;
+}
+
+.six-section .item-card-link {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.six-section .item-card-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.six-section .item-card-link:hover::before {
+    left: 100%;
+}
+
+.six-section .item-card-link:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 206, 209, 0.3);
+}
+
+.image-wraper {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.six-section .item-card-link:hover .image-wraper {
+    transform: scale(1.05);
+}
+
+/* Улучшенная кнопка "Наверх" */
+.scroll-to-top {
+    background: linear-gradient(135deg, #00CED1 0%, #40E0D0 50%, #00BFFF 100%);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 206, 209, 0.3);
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 206, 209, 0.5);
+}
+
+/* Улучшенный фон для первой секции */
+.first-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.first-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(0, 206, 209, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(64, 224, 208, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.first-section .info-block {
+    position: relative;
+    z-index: 2;
+}
+
+/* Анимация появления элементов */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item,
+.four-section .card,
+.six-section .item-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.todo-item:nth-child(1) { animation-delay: 0.1s; }
+.todo-item:nth-child(2) { animation-delay: 0.2s; }
+.todo-item:nth-child(3) { animation-delay: 0.3s; }
+.todo-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Улучшенные медиа-запросы */
+@media (max-width: 768px) {
+    .todo-item {
+        margin-bottom: 20px;
+    }
+    
+    .title-section::after {
+        width: 40px;
+        height: 2px;
+    }
+    
+    .scroll-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+} 
