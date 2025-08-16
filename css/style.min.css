@@ -132,7 +132,7 @@
 .three-section .block-content {
     position: relative;
     z-index: 1;
-    max-width: 413px;
+    max-width: 700px;
     text-align: center;
     margin: 0 auto;
 }
@@ -611,10 +611,6 @@
         transform: none;
     }
     
-    .scroll-to-top {
-        transition: none;
-    }
-    
     .four-section .card-list .card {
         transition: none;
     }
@@ -622,39 +618,6 @@
     .four-section .card-list .card:hover {
         transform: none;
     }
-}
-
-/* ===========================
-   Scroll to Top Button
-=========================== */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(40, 41, 54, 0.9);
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    cursor: pointer;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-
-.scroll-to-top:hover {
-    background: var(--accent-color);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 164, 1, 0.3);
-}
-
-.scroll-to-top.show {
-    display: flex;
 }
 
 /* ===========================

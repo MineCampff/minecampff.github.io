@@ -145,8 +145,6 @@
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
-    /* Убираем ограничения ширины */
-    max-width: none !important;
     width: 100%;
 }
 
@@ -758,4 +756,104 @@
         border-width: 3px;
     }
 
+}
+
+/* Исправление 6 секции - одинаковый размер карточек */
+.six-section .content-cards-links {
+    display: grid;
+    align-items: stretch;
+    column-gap: 20px;
+    row-gap: 90px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: stretch;
+}
+
+.six-section .content-cards-links .item-card {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.six-section .content-cards-links .item-card .item-card-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.six-section .content-cards-links .item-card .image-wraper {
+    padding: 1.125em;
+    border-radius: 1.25em;
+    flex-shrink: 0;
+}
+
+.six-section .content-cards-links .item-card .image-wraper img {
+    width: 3.75em;
+    height: 3.75em;
+    transition: transform 0.3s ease;
+}
+
+.six-section .content-cards-links .item-card .info-wraper {
+    flex: 1;
+    min-width: 0;
+}
+
+.six-section .content-cards-links .item-card .title-card-link {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.six-section .content-cards-links .item-card .desc-card-link {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Адаптивность для 6 секции */
+@media (max-width: 1310px) {
+    .six-section .content-cards-links { 
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+        row-gap: 60px;
+    }
+}
+
+@media (max-width: 850px) {
+    .six-section .content-cards-links {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 60px;
+        column-gap: 15px;
+    }
+    
+    .six-section .content-cards-links .item-card .item-card-link {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .six-section .content-cards-links .item-card .info-wraper {
+        text-align: center;
+    }
+}
+
+@media (max-width: 590px) {
+    .six-section .content-cards-links {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+        column-gap: 0;
+    }
+    
+    .six-section .content-cards-links .item-card .item-card-link {
+        padding: 20px 15px;
+    }
 }
