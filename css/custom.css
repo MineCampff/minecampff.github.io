@@ -65,7 +65,6 @@
 }
 
 .style-btn:active {
-    transform: translateY(0);
     box-shadow: 0 2px 10px rgba(0, 206, 209, 0.3);
 }
 
@@ -98,7 +97,6 @@
 .style-btn-alt:hover {
     background: linear-gradient(45deg, #00BFFF 0%, #20B2AA 25%, #48D1CC 50%, #00CED1 75%, #40E0D0 100%);
     box-shadow: 0 6px 25px rgba(32, 178, 170, 0.5), 0 12px 40px rgba(72, 209, 204, 0.4);
-    transform: translateY(-3px);
 }
 
 /* ===========================
@@ -137,6 +135,7 @@
 
 /* Улучшенные карточки */
 .todo-item {
+    height: 425px; /* Фиксированная высота */
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     padding: 20px;
@@ -164,7 +163,6 @@
 }
 
 .todo-item:hover {
-    transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-color: rgba(0, 206, 209, 0.4);
     border-width: 3px;
@@ -178,7 +176,6 @@
 
 .todo-item:hover .todo-image {
     filter: brightness(1.1);
-    transform: translateY(1.05);
 }
 
 /* Улучшаем сетку карточек */
