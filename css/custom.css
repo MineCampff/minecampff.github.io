@@ -512,6 +512,28 @@
 }
 
 @media (max-width: 480px) {
+    /* Оптимизация анимации для маленьких экранов */
+    #navbar-sticky {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #navbar-sticky:not(.show) {
+        transform: translateY(-15px) scale(0.98);
+    }
+    
+    #navbar-sticky li {
+        transform: translateX(-15px);
+    }
+    
+    #navbar-sticky.show li:nth-child(1) { transition-delay: 0.05s; }
+    #navbar-sticky.show li:nth-child(2) { transition-delay: 0.1s; }
+    #navbar-sticky.show li:nth-child(3) { transition-delay: 0.15s; }
+    #navbar-sticky.show li:nth-child(4) { transition-delay: 0.2s; }
+    
+    #navbar-sticky a {
+        padding: 0.8rem 1.2rem !important;
+    }
+    
     .todo-item {
         padding: 12px;
         border-width: 1.5px;
@@ -839,4 +861,63 @@
 .item-menu a:hover::after,
 .items-center a:hover::after {
   transform: scaleX(0.6);    /* Линия полностью видна */
+}
+
+/* Анимация для мобильного меню */
+@media (max-width: 1023px) {
+    #navbar-sticky {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: top center;
+    }
+
+    /* Состояние по умолчанию (скрыто) - только для мобильных */
+    #navbar-sticky:not(.show) {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+        pointer-events: none;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    /* Состояние открыто - только для мобильных */
+    #navbar-sticky.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+        max-height: 500px;
+        overflow: visible;
+    }
+
+    /* Анимация для элементов меню */
+    #navbar-sticky ul {
+        transition: all 0.3s ease;
+    }
+
+    #navbar-sticky:not(.show) ul {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    #navbar-sticky.show ul {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    /* Анимация для отдельных пунктов меню */
+    #navbar-sticky li {
+        transition: all 0.3s ease;
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    #navbar-sticky.show li {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Задержка для каждого пункта меню */
+    #navbar-sticky.show li:nth-child(1) { transition-delay: 0.1s; }
+    #navbar-sticky.show li:nth-child(2) { transition-delay: 0.15s; }
+    #navbar-sticky.show li:nth-child(3) { transition-delay: 0.2s; }
+    #navbar-sticky.show li:nth-child(4) { transition-delay: 0.25s; }
 }

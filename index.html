@@ -527,21 +527,43 @@
   </script>
 
   <script>
-    // Функция для прокрутки наверх
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    }
-
-    // Показывать/скрывать кнопку "Наверх"
-    window.addEventListener('scroll', function() {
-      const scrollToTopBtn = document.querySelector('.scroll-to-top');
-      if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('show');
-      } else {
-        scrollToTopBtn.classList.remove('show');
+    // Улучшенная анимация для мобильного меню
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+      const menu = document.getElementById('navbar-sticky');
+      
+      if (menuButton && menu) {
+        menuButton.addEventListener('click', function() {
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          
+          if (isExpanded) {
+            // Закрытие меню
+            menu.classList.remove('show');
+            setTimeout(() => {
+              menu.style.display = 'none';
+            }, 400);
+          } else {
+            // Открытие меню
+            menu.style.display = 'block';
+            // Небольшая задержка для запуска анимации
+            setTimeout(() => {
+              menu.classList.add('show');
+            }, 10);
+          }
+        });
+        
+        // Закрытие меню при клике вне его
+        document.addEventListener('click', function(event) {
+          if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+            if (menu.classList.contains('show')) {
+              menu.classList.remove('show');
+              setTimeout(() => {
+                menu.style.display = 'none';
+              }, 400);
+              menuButton.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
       }
     });
   </script>
