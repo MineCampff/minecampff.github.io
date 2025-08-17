@@ -383,7 +383,6 @@
         width: 100%;
         max-width: none !important;
     }
-    
     .todo-item:hover {
         transform: translateY(-4px);
         border-width: 3px;
@@ -533,10 +532,7 @@
     
     .title {
         font-size: 2rem;
-    }
-    
-    .title-section {
-        font-size: 1.5rem;
+
     }
     
     .todo-item-title {
